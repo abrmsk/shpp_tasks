@@ -1,0 +1,30 @@
+{
+    "pageTitle" : "Главная Страница из JSON",
+    "pageHeader" : "Заголовок страницы из JSON 5555",
+    "pageContent" : "Контент страницы из JSON",
+    "footerHeader" : "7777 Заголовок подвала из JSON",
+
+    "navigation" : [
+        {
+            "name" : "Главная",
+            "link" : "index.html"
+        },
+        {
+            "name" : "О компании",
+            "link" : "about.html"
+        },
+        {
+            "name" : "Новости",
+            "link" : "news.html"
+        },
+        {
+            "name" : "Контакты",
+            "link" : "contacts.html"
+        },
+        {
+            "name" : "Блог",
+            "link" : "http://www.e-blog.html"
+        }
+    ]
+
+}

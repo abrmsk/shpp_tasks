@@ -1,0 +1,66 @@
+/* BUTTON */
+/* STYLE BUTTON */
+.button {
+  background-color: #98a58a;
+  color: #ffffff;
+  padding: 1em 2em;
+  text-transform: uppercase;
+  font-size: 14px;
+  line-height: 14px;
+  letter-spacing: 0.16em;
+  text-decoration: none;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  transition: width .2s ease, height .2s ease;
+
+  appearance: none; /* ? */
+}
+
+.button span {
+  position: relative;
+  pointer-events: none;
+}
+
+.button::before {
+  --size: 0;
+  content: '';
+  position: absolute;
+  display: block;
+  left: var(--x);
+  top: var(--y);
+  width: var(--size);
+  height: var(--size);
+  background: radial-gradient(circle closest-side, #cf998f, transparent);
+  transform: translate(-50%, -50%);
+  transition: width .2s ease, height .2s ease;
+}
+
+.button:hover::before {
+  --size: 140px;
+}
+
+
+
+
+
+
+
+
+/* block info */
+.info {
+  font-family: 'Courier New', Courier, monospace;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  top: 0;
+  right: 0;
+  margin: 8px 8px 0 0;
+  width: 180px;
+  color: #aaaaaa;
+}
+
+.info__item span {
+  color: #181818;
+}

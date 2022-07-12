@@ -1,0 +1,60 @@
+* {
+  box-sizing: border-box;
+}
+
+.ContainerApp {
+  display: flex;
+  height: 300px;
+}
+
+.Container {
+  /* margin: 8px; */
+  margin-bottom: 8px;
+  border-radius: 2px;
+  /* border: '1px solid lightgrey'; */
+  /* background-color: 'white'; */
+  /* width: 220px; */
+  /* display: flex; */
+  /* flex-direction: column;  */
+  border: 1px solid lightgrey;
+  border-radius: 50%;
+  padding: 8px;
+  margin-right: 8px;
+
+  
+  width: 40px;
+  height: 40px;
+
+  /* display: flex; */
+  justify-content: center;
+  align-items: center;
+}
+.Container::focus {
+  outline: none;
+  border-color: red;
+}
+
+.ContainerColumns {
+  width: 230px;
+  border: 1px solid #000;
+}
+
+.Title {
+  /* padding: 8px; */
+}
+
+.TaskList {
+  /* padding: 8px; */
+  /* transition: background-color 0.2s ease; */
+  /* background-color: 'white'; */
+  flex-grow: 1;
+  min-height: 100px;
+}
+
+.Handle {
+  width: 20px;
+  height: 20px;
+  background-color: orange;
+  border-radius: 4px;
+  /* margin-right: 8px; */
+}

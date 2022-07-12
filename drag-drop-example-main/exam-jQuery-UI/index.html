@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>jQuery UI Sortable - Handle empty lists</title>
+  <!--  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">-->
+  <!--  <link rel="stylesheet" href="/resources/demos/style.css">-->
+  <style>
+      .sortable-wrapper {
+          width: 70%;
+          height: 300px;
+          margin: 0 auto;
+          border: 1px solid #2A92BF;
+      }
+      li {
+          border: 1px solid #00B961;
+          cursor: grab;
+      }
+      .rotate-element {
+          transform: rotate(10deg);
+          background: #00B961;
+          border: 1px solid #444444;
+      }
+      .sortable-placeholder {
+          background: #F4CE46;
+      }
+
+      #sortable1, #sortable2, #sortable3 {list-style-type: none;margin: 0;float: left;margin-right: 10px;background: #eee;padding: 5px;width: 143px;}
+      #sortable1 li, #sortable2 li, #sortable3 li {margin: 5px;padding: 5px;font-size: 1.2em;width: 120px;}
+  </style>
+  <script src="js/jQuery.js"></script>
+  <script src="js/jquery-ui.min.js"></script>
+  <script>
+    $(function () {
+      $(".main-box").sortable({
+        cursor: "move",
+		axis: "x",
+		revert: 100, // Плавная анимация посадки на новое место.
+		forcePlaceholderSize: true,
+        placeholder: "sortable-placeholder",
+		
+		start: function( e, ui ) {
+          ui.item[0].classList.add('rotate-element');
+          return ui;
+        },
+        stop: function( e, ui ) {
+          ui.item[0].classList.remove('rotate-element');
+          return ui;
+        },
+      });
+
+      $("ul.droptrue").sortable({
+        cursor: "move",
+        connectWith: "ul",
+        forcePlaceholderSize: true,
+        // items: "> li", //Указывает, какие элементы внутри элемента следует сортировать.
+        revert: 100, // Плавная анимация посадки на новое место.
+        placeholder: "sortable-placeholder",
+
+        start: function( e, ui ) {
+          ui.item[0].classList.add('rotate-element');
+          return ui;
+        },
+        stop: function( e, ui ) {
+          ui.item[0].classList.remove('rotate-element');
+          return ui;
+        },
+
+      });
+
+      $("ul.dropfalse").sortable({
+
+        dropOnEmpty: false,
+        cursor: "move",
+        connectWith: "ul",
+        forcePlaceholderSize: true,
+        // items: "> li", //Указывает, какие элементы внутри элемента следует сортировать.
+        revert: 100, // Плавная анимация посадки на новое место.
+        placeholder: "sortable-placeholder",
+
+        start: function( e, ui ) {
+          ui.item[0].classList.add('rotate-element');
+          return ui;
+        },
+        stop: function( e, ui ) {
+          ui.item[0].classList.remove('rotate-element');
+          return ui;
+        },
+
+      });
+
+      // $("#sortable1, #sortable2, #sortable3").disableSelection();
+    });
+  </script>
+</head>
+<body>
+<section class="sortable-wrapper">
+  <div class="main-box">
+    <ul id="sortable1" class="droptrue">
+      <li class="ui-state-default">Item 1</li>
+      <li class="ui-state-default">Item 2</li>
+      <li class="ui-state-default">Item 3</li>
+<!--      <div class="ui-state-default">Item div</div>-->
+<!--      <span class="ui-state-default">Item span</span>-->
+      <li class="ui-state-default">Item 4</li>
+      <li class="ui-state-default">Item 5</li>
+      <li class="ui-state-default">Item 6</li>
+    </ul>
+
+    <ul id="sortable2" class="dropfalse">
+      <li class="ui-state-highlight">Cannot be dropped..</li>
+      <li class="ui-state-highlight">..on an empty list</li>
+      <li class="ui-state-highlight">Can be dropped..</li>
+      <li class="ui-state-highlight">..on an empty list</li>
+    </ul>
+  </div>
+</section>
+<ul id="sortable3" class="droptrue">
+</ul>
+
+<br style="clear:both">
+
+
+</body>
+</html>
